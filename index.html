@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#fff8f0" />
-    <title>Congratulations, Claresta Ratna! 🎓</title>
+    <title>Congratulations, Claresta Ratna, S.Kom! 🎓</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap");
       :root {
@@ -28,6 +28,11 @@
         font-family: "DM Sans", sans-serif;
         background: var(--cream);
         overflow-x: hidden;
+      }
+      html,
+      body {
+        max-width: 100%;
+        overflow-x: clip;
       }
       .page {
         min-height: 100vh;
@@ -429,10 +434,26 @@
           font-size: 1.8rem;
         }
         h1 {
-          font-size: clamp(3.4rem, 15vw, 5rem);
+          font-size: clamp(2rem, 9.5vw, 4rem);
+          line-height: 1.05;
+          letter-spacing: -0.045em;
+          max-width: 100%;
+          overflow-wrap: break-word;
+        }
+
+        .hero,
+        .hero-copy {
+          min-width: 0;
+          width: 100%;
+        }
+
+        main {
+          padding-left: 16px;
+          padding-right: 16px;
         }
         .intro {
           font-size: 1rem;
+          text-align: justify;
         }
         .wishes {
           grid-template-columns: 1fr;
@@ -490,7 +511,7 @@
               <div class="cap">🎓</div>
               <div class="cert-small">With pride &amp; happiness</div>
               <div class="cert-title">You did it!</div>
-              <div class="cert-name">Claresta Ratna</div>
+              <div class="cert-name">Claresta Ratna, S.Kom</div>
               <div class="cert-line"></div>
               <div class="cert-footer">
                 For every late night, every challenge,<br />and every step that
@@ -540,7 +561,7 @@
             <h2>Dear Claresta,</h2>
           </div>
           <div class="letter">
-            <p>Congratulations on your graduation, Claresta Ratna! 🎓</p>
+            <p>Congraduation Claresta Ratna, S.Kom! 🎓</p>
             <p>
               Today, take a moment to look back and appreciate all the hard work
               that has brought you to where you are now. Every challenge, every
