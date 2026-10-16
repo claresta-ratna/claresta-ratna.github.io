@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fff8f0" />
+    <title>Congratulations, Claresta Ratna! 🎓</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap");
+      :root {
+        --ink: #382b3b;
+        --muted: #786b7c;
+        --rose: #d98f9e;
+        --rose-dark: #a95873;
+        --cream: #fff8f0;
+        --lilac: #eee5f5;
+        --gold: #d6ad68;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        color: var(--ink);
+        font-family: "DM Sans", sans-serif;
+        background: var(--cream);
+        overflow-x: hidden;
+      }
+      .page {
+        min-height: 100vh;
+        position: relative;
+        isolation: isolate;
+      }
+      .glow {
+        position: absolute;
+        z-index: -1;
+        border-radius: 50%;
+        filter: blur(2px);
+        opacity: 0.7;
+      }
+      .glow.one {
+        width: 360px;
+        height: 360px;
+        top: -130px;
+        left: -130px;
+        background: #f5dce4;
+      }
+      .glow.two {
+        width: 420px;
+        height: 420px;
+        right: -170px;
+        top: 36%;
+        background: #e9def4;
+      }
+      .glow.three {
+        width: 260px;
+        height: 260px;
+        left: 10%;
+        bottom: 2%;
+        background: #f8e8c9;
+        opacity: 0.4;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1100px;
+        margin: auto;
+        padding: 24px 26px;
+      }
+      .brand {
+        font-family: "Playfair Display", serif;
+        font-size: 1.15rem;
+        letter-spacing: 0.04em;
+      }
+      .nav-note {
+        color: var(--muted);
+        font-size: 0.82rem;
+      }
+      main {
+        max-width: 1100px;
+        margin: auto;
+        padding: 30px 26px 70px;
+      }
+      .hero {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 48px;
+        align-items: center;
+        min-height: 70vh;
+      }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        border: 1px solid #e9d7df;
+        background: #fff9f9;
+        border-radius: 99px;
+        padding: 9px 14px;
+        color: var(--rose-dark);
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      .eyebrow span {
+        font-size: 1rem;
+      }
+      h1 {
+        font-family: "Playfair Display", serif;
+        font-weight: 600;
+        font-size: clamp(3.2rem, 7vw, 6.4rem);
+        line-height: 0.99;
+        letter-spacing: -0.045em;
+        margin: 24px 0 18px;
+      }
+      h1 em {
+        font-style: normal;
+        color: var(--rose-dark);
+        display: block;
+      }
+      .intro {
+        max-width: 490px;
+        color: var(--muted);
+        font-size: 1.05rem;
+        line-height: 1.9;
+        margin: 0 0 28px;
+      }
+      .actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      button {
+        font: inherit;
+        cursor: pointer;
+        border: 0;
+        border-radius: 999px;
+        padding: 14px 20px;
+        font-weight: 700;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+      button:hover {
+        transform: translateY(-2px);
+      }
+      .primary {
+        color: white;
+        background: var(--ink);
+        box-shadow: 0 12px 25px #382b3b24;
+      }
+      .secondary {
+        background: #fff;
+        border: 1px solid #e9dce5;
+        color: var(--ink);
+      }
+      .art {
+        position: relative;
+        min-height: 450px;
+        display: grid;
+        place-items: center;
+      }
+      .orbit {
+        width: min(100%, 420px);
+        aspect-ratio: 1;
+        border-radius: 50%;
+        border: 1px solid #dfc8d8;
+        position: absolute;
+        transform: rotate(-14deg);
+      }
+      .orbit:before,
+      .orbit:after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--gold);
+      }
+      .orbit:before {
+        top: 15%;
+        left: 13%;
+      }
+      .orbit:after {
+        right: 7%;
+        bottom: 24%;
+        background: var(--rose);
+      }
+      .certificate {
+        position: relative;
+        width: min(86%, 340px);
+        min-height: 390px;
+        background: linear-gradient(145deg, #fffdf9, #fff4f1);
+        border: 1px solid #ead7d1;
+        border-radius: 8px;
+        padding: 34px 26px;
+        text-align: center;
+        box-shadow: 0 28px 70px #5e3d5122;
+        transform: rotate(3deg);
+      }
+      .certificate:before {
+        content: "";
+        position: absolute;
+        inset: 10px;
+        border: 1px solid #e5c9a1;
+        pointer-events: none;
+      }
+      .cap {
+        font-size: 4.3rem;
+        line-height: 1.2;
+        filter: drop-shadow(0 7px 5px #382b3b16);
+      }
+      .cert-small {
+        margin-top: 16px;
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: var(--muted);
+      }
+      .cert-title {
+        font-family: "Playfair Display", serif;
+        font-size: 2.1rem;
+        line-height: 1.1;
+        margin: 14px 0;
+        color: var(--rose-dark);
+      }
+      .cert-name {
+        font-family: "Playfair Display", serif;
+        font-size: 1.45rem;
+        margin: 14px 0 8px;
+      }
+      .cert-line {
+        height: 1px;
+        width: 70px;
+        background: var(--gold);
+        margin: 16px auto;
+      }
+      .cert-footer {
+        color: var(--muted);
+        font-size: 0.8rem;
+        line-height: 1.7;
+      }
+      .spark {
+        position: absolute;
+        color: var(--gold);
+        font-size: 1.5rem;
+      }
+      .s1 {
+        top: 10%;
+        right: 11%;
+      }
+      .s2 {
+        bottom: 13%;
+        left: 8%;
+        font-size: 2rem;
+      }
+      .s3 {
+        top: 25%;
+        left: 3%;
+        color: var(--rose);
+        font-size: 1.2rem;
+      }
+      .section {
+        margin: 62px 0 0;
+      }
+      .section-head {
+        text-align: center;
+        max-width: 650px;
+        margin: 0 auto 28px;
+      }
+      .kicker {
+        color: var(--rose-dark);
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 0.73rem;
+        font-weight: 700;
+      }
+      h2 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 600;
+        margin: 12px 0;
+      }
+      .section-head p {
+        color: var(--muted);
+        line-height: 1.8;
+        margin: 0;
+      }
+      .wishes {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+      .wish {
+        padding: 25px 22px;
+        border: 1px solid #eddfdf;
+        background: #ffffffa8;
+        border-radius: 18px;
+      }
+      .wish-icon {
+        width: 42px;
+        height: 42px;
+        display: grid;
+        place-items: center;
+        background: #f8e8ed;
+        border-radius: 14px;
+        font-size: 1.25rem;
+        margin-bottom: 18px;
+      }
+      .wish h3 {
+        margin: 0 0 8px;
+        font-family: "Playfair Display", serif;
+        font-size: 1.25rem;
+      }
+      .wish p {
+        color: var(--muted);
+        font-size: 0.91rem;
+        line-height: 1.75;
+        margin: 0;
+      }
+      .letter {
+        max-width: 760px;
+        margin: 0 auto;
+        background: #fffdfb;
+        border: 1px solid #efdfdf;
+        border-radius: 24px;
+        padding: clamp(26px, 5vw, 48px);
+        box-shadow: 0 20px 60px #573c4b0b;
+        position: relative;
+      }
+      .letter:before {
+        content: "“";
+        position: absolute;
+        top: 4px;
+        left: 22px;
+        font-family: "Playfair Display", serif;
+        font-size: 5rem;
+        color: #f0d7df;
+        line-height: 1;
+      }
+      .letter p {
+        position: relative;
+        color: #665669;
+        line-height: 2;
+        font-size: 1rem;
+        margin: 0 0 16px;
+      }
+      .signature {
+        font-family: "Playfair Display", serif;
+        font-size: 1.3rem;
+        color: var(--rose-dark);
+        margin-top: 24px;
+      }
+      .signature small {
+        display: block;
+        font-family: "DM Sans", sans-serif;
+        font-size: 0.78rem;
+        color: var(--muted);
+        margin-top: 6px;
+      }
+      .finale {
+        text-align: center;
+        padding: 70px 10px 24px;
+      }
+      .finale .big-star {
+        font-size: 2rem;
+      }
+      .finale h2 {
+        margin: 15px 0 10px;
+      }
+      .finale p {
+        color: var(--muted);
+        line-height: 1.8;
+      }
+      footer {
+        text-align: center;
+        padding: 24px;
+        color: #9a8b9b;
+        font-size: 0.76rem;
+      }
+      .confetti {
+        position: fixed;
+        top: -12px;
+        width: 9px;
+        height: 14px;
+        z-index: 10;
+        pointer-events: none;
+        animation: fall 3.2s linear forwards;
+      }
+      @keyframes fall {
+        to {
+          transform: translate3d(var(--drift), 110vh, 0) rotate(780deg);
+          opacity: 0.85;
+        }
+      }
+      @media (max-width: 760px) {
+        nav {
+          padding: 20px 20px;
+        }
+        .nav-note {
+          display: none;
+        }
+        main {
+          padding: 20px 20px 50px;
+        }
+        .hero {
+          grid-template-columns: 1fr;
+          gap: 8px;
+          min-height: auto;
+          padding-top: 28px;
+        }
+        .art {
+          min-height: 390px;
+          grid-row: 1;
+        }
+        .certificate {
+          min-height: 350px;
+          width: 290px;
+          padding: 26px 22px;
+        }
+        .cap {
+          font-size: 3.5rem;
+        }
+        .cert-title {
+          font-size: 1.8rem;
+        }
+        h1 {
+          font-size: clamp(3.4rem, 15vw, 5rem);
+        }
+        .intro {
+          font-size: 1rem;
+        }
+        .wishes {
+          grid-template-columns: 1fr;
+        }
+        .section {
+          margin-top: 48px;
+        }
+        .finale {
+          padding-top: 52px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="glow one"></div>
+      <div class="glow two"></div>
+      <div class="glow three"></div>
+      <nav>
+        <div class="brand">a little celebration ✦</div>
+        <div class="nav-note">for Claresta Ratna</div>
+      </nav>
+      <main>
+        <section class="hero">
+          <div class="hero-copy">
+            <div class="eyebrow"><span>✦</span> A day worth celebrating</div>
+            <h1>Congraduation,<em>Claresta!</em></h1>
+            <p class="intro">
+              One chapter has come to an end, and a beautiful new chapter is
+              waiting to unfold. Today is a celebration of hard work, courage,
+              and everything you have worked so hard to achieve. You did it! 🎓
+            </p>
+            <div class="actions">
+              <button class="primary" id="celebrate">
+                Celebrate this moment ✨
+              </button>
+              <button class="secondary" id="readLetter">
+                A little message ↓
+              </button>
+            </div>
+          </div>
+          <div class="art" aria-label="Ilustrasi sertifikat wisuda">
+            <div class="orbit"></div>
+            <span class="spark s1">✧</span><span class="spark s2">✦</span
+            ><span class="spark s3">✳</span>
+            <div class="certificate">
+              <div class="cap">🎓</div>
+              <div class="cert-small">With pride &amp; happiness</div>
+              <div class="cert-title">You did it!</div>
+              <div class="cert-name">Claresta Ratna</div>
+              <div class="cert-line"></div>
+              <div class="cert-footer">
+                For every late night, every challenge,<br />and every step that
+                brought you here.
+              </div>
+              <div
+                style="margin-top: 20px; color: #b78c50; letter-spacing: 0.2em"
+              >
+                ✦ ✧ ✦
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="wishes">
+            <article class="wish">
+              <div class="wish-icon">🌷</div>
+              <h3>Be proud</h3>
+              <p>
+                Be proud of yourself, not only for the final result, but also
+                for the long journey and all the effort it took to get here.
+              </p>
+            </article>
+            <article class="wish">
+              <div class="wish-icon">🌟</div>
+              <h3>Keep shining</h3>
+              <p>
+                May you always find opportunities to grow, the courage to try
+                new things, and the confidence to shine in your own unique way.
+              </p>
+            </article>
+            <article class="wish">
+              <div class="wish-icon">🦋</div>
+              <h3>Enjoy the journey</h3>
+              <p>
+                May the road ahead be filled with kind people, meaningful
+                experiences, and countless new reasons to smile.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="letter">
+          <div class="section-head">
+            <div class="kicker">A little note for you</div>
+            <h2>Dear Claresta,</h2>
+          </div>
+          <div class="letter">
+            <p>Congratulations on your graduation, Claresta Ratna! 🎓</p>
+            <p>
+              Today, take a moment to look back and appreciate all the hard work
+              that has brought you to where you are now. Every challenge, every
+              exhausting day, and every lesson you have learned has been a
+              meaningful part of your journey.
+            </p>
+            <p>
+              May many wonderful doors open for you from this day forward. May
+              you have the courage to pursue your dreams, the wisdom to make the
+              right choices, and the happiness to appreciate every step you
+              take, both big and small.
+            </p>
+            <p>
+              Once again, congratulations on your graduation! Wishing you a
+              future full of meaningful adventures and beautiful possibilities.
+              ✨
+            </p>
+            <div class="signature">
+              With warm wishes,<small
+                >Someone who is genuinely happy to see you achieve this
+                milestone 🙂</small
+              >
+            </div>
+          </div>
+        </section>
+
+        <section class="finale">
+          <div class="big-star">🥂 ✨ 🎓</div>
+          <h2>The world is yours, Claresta.</h2>
+          <p>
+            Congratulations on this wonderful achievement. Keep dreaming, keep
+            growing, and keep being you.
+          </p>
+          <button class="primary" id="again">One more celebration! 🎉</button>
+        </section>
+      </main>
+      <footer>
+        Created to celebrate Claresta Ratna · A new chapter, a beautiful
+        beginning
+      </footer>
+    </div>
+    <script>
+      const celebrate = () => {
+        const colors = ["#d98f9e", "#d6ad68", "#b7a0d1", "#f2c8a8", "#a8c8b8"];
+        for (let i = 0; i < 95; i++) {
+          const piece = document.createElement("span");
+          piece.className = "confetti";
+          piece.style.left = Math.random() * 100 + "vw";
+          piece.style.background =
+            colors[Math.floor(Math.random() * colors.length)];
+          piece.style.borderRadius = Math.random() > 0.5 ? "50%" : "2px";
+          piece.style.setProperty("--drift", Math.random() * 220 - 110 + "px");
+          piece.style.animationDelay = Math.random() * 0.8 + "s";
+          piece.style.animationDuration = 2.4 + Math.random() * 2 + "s";
+          document.body.appendChild(piece);
+          setTimeout(() => piece.remove(), 5200);
+        }
+      };
+      document.getElementById("celebrate").addEventListener("click", celebrate);
+      document.getElementById("again").addEventListener("click", () => {
+        celebrate();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+      document
+        .getElementById("readLetter")
+        .addEventListener("click", () =>
+          document
+            .getElementById("letter")
+            .scrollIntoView({ behavior: "smooth" }),
+        );
+    </script>
+  </body>
+</html>
